@@ -1,0 +1,8 @@
+.direitos {
+    background-color: var(--preto);
+    color: var(--branco);
+    padding: 10px;
+    text-align: center;
+    font-size: 1.2rem;
+    padding: 1.2rem;
+}
