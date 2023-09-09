@@ -22,3 +22,16 @@ function typeWriter(texto) {
 
 const textoElement = document.getElementById("cargoAnimation");
 typeWriter(textoElement);
+
+const menuSelect = document.getElementById("menuBurguer");
+const menu = document.querySelector("#cabecalhoBurguer");
+
+menuSelect.addEventListener("click", () => {
+    if (menuSelect.innerHTML == "menu") {
+        menuSelect.innerHTML = "close";
+        menu.style.display = "flex";
+    } else if (menuSelect.innerHTML == "close") {
+        menuSelect.innerHTML = "menu";
+        menu.style.display = "none";
+    }
+});

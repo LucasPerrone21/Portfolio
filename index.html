@@ -4,26 +4,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="cssReset.css">
-    <link rel="stylesheet" href="cores.css">
-    <link rel="stylesheet" href="header.css">
-    <link rel="stylesheet" href="inicio.css">
-    <link rel="stylesheet" href="meusProjetos.css">
-    <link rel="stylesheet" href="contato.css">
-    <link rel="stylesheet" href="footer.css">
+    <meta name="description" content="Portifolio">
+    <meta name="keywords" content="HTML, CSS, JavaScript, Fullstack">
+    <meta name="author" content="Lucas Perrone">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;700&display=swap" rel="stylesheet">
+    <link type="text/css" rel="stylesheet" href="cssReset.css">
+    <link type="text/css" rel="stylesheet" href="cores.css">
+    <link type="text/css" rel="stylesheet" href="header.css">
+    <link type="text/css" rel="stylesheet" href="inicio.css">
+    <link type="text/css" rel="stylesheet" href="meusProjetos.css">
+    <link type="text/css" rel="stylesheet" href="contato.css">
+    <link type="text/css" rel="stylesheet" href="footer.css">
     <title>Lucas Perrone - Fullstack Developer</title>
 </head>
 
 <body>
-    <header class="cabecalhoBig">
+    <header class="cabecalhoExterno">
         <nav class="cabecalho">
             <h1 class="logo"> &lt;/Lucas Perrone&gt;</h1>
-            <ul class="cabecalhoLista">
+            <span id="menuBurguer" class="material-symbols-outlined menuBurguer oi">menu</span>
+            <ul id="cabecalhoBurguer" class="cabecalhoLista">
                 <li><a class="linkCabecalho" href="#quemSouEu">Home</a></li>
-                <li><a class="linkCabecalho" href="#projetos">Projetos</a></li>
+                <li><a class="linkCabecalho linkCabecalho-Central" href="#projetos">Projetos</a></li>
                 <li><a class="linkCabecalho" href="#contato">Contato</a></li>
             </ul>
         </nav>
@@ -82,7 +87,7 @@
                         </div>
                     </div>
                 </li>
-                <li class="meusProjetos-Itens">
+                <li class="meusProjetos-Itens meusProjetos-Itens-Central">
 
                     <div class="meusProjetos-Descricao">
                         <h3 class="meusProjetos-Subtitulo">Space Invaders</h3>

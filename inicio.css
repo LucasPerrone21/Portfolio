@@ -3,7 +3,7 @@
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    padding: 0 12rem;
+    padding: 0 10rem;
     padding-top: 5rem;
 }
 
@@ -118,5 +118,149 @@
     }
     100% {
         opacity: 1;
+    }
+}
+
+@media screen and (max-width: 1490px) {
+    .circulo1 {
+        display: none;
+    }
+
+    .circulo2 {
+        top: 9rem;
+    }
+
+    .quemSouEu {
+        margin-top: 2rem;
+    }
+}
+
+@media screen and (max-width: 1280px) {
+    .circulo2 {
+        top: 13rem;
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    .quemSouEu {
+        padding: 0 5rem;
+    }
+
+    .circulo2 {
+        top: 12rem;
+        right: 10rem;
+        width: 20rem;
+        height: 20rem;
+    }
+
+    .minhaFoto-Container {
+        width: 22rem;
+    }
+
+    .minhaFoto {
+        width: 22rem;
+    }
+
+    .descricao {
+        width: 75%;
+    }
+
+    .meuNome-Cargo {
+        font-size: 2rem;
+    }
+}
+
+@media screen and (max-width: 804px) {
+    .meuNome {
+        font-size: 3rem;
+    }
+
+    .meuNome-Cargo {
+        font-size: 1.5rem;
+    }
+
+    .quemSouEu {
+        display: flex;
+    }
+
+    .descricao {
+        width: 75%;
+    }
+
+    .minhaFoto-Container {
+        width: 25%;
+    }
+
+    .minhaFoto {
+        width: 15rem;
+    }
+
+    .circulo2 {
+        top: 11rem;
+        right: 3rem;
+        width: 15rem;
+        height: 15rem;
+    }
+
+    .minhaDescricao {
+        font-size: 1rem;
+    }
+
+    .iconesTecnologias {
+        width: 2.5rem;
+    }
+}
+
+@media screen and (max-width: 657px) {
+    .quemSouEu {
+        padding: 0 2.5rem;
+    }
+
+    .minhaFoto {
+        width: 12rem;
+    }
+
+    .circulo2 {
+        width: 12rem;
+        height: 12rem;
+        top: 12rem;
+        right: 2rem;
+    }
+}
+
+@media screen and (max-width: 511px) {
+    .quemSouEu {
+        flex-direction: column-reverse;
+    }
+
+    .minhaFoto-Container {
+        margin-top: 1rem;
+        height: 12rem;
+    }
+
+    .circulo2 {
+        width: 12rem;
+        height: 12rem;
+        top: 3rem;
+        right: 7rem;
+    }
+
+    .descricao {
+        width: 100%;
+    }
+
+    .minhaDescricao {
+        margin-right: 0;
+    }
+
+    .iconesTecnologias-container {
+        margin-right: 0;
+    }
+}
+
+@media screen and (max-width: 420px) {
+    .circulo2 {
+        top: 3.5rem;
+        right: 6rem;
     }
 }

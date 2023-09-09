@@ -12,6 +12,7 @@ body {
     background: var(--azul-meio-termo);
     border-radius: 5px 0 0 5px;
 }
+
 .cabecalho {
     background-color: var(--branco);
     width: 100%;
@@ -22,8 +23,11 @@ body {
     flex-direction: row;
     align-self: center;
     align-items: center;
-    backdrop-filter: blur(5px);
     padding: 1rem 0;
+}
+
+.menuBurguer {
+    display: none;
 }
 
 .logo {
@@ -63,4 +67,111 @@ body {
 .linkCabecalho:hover {
     background-size: 100% 3px;
     transition: 200ms ease;
+}
+
+@media screen and (max-width: 1490px) {
+    .cabecalho {
+        flex-direction: column;
+        align-items: center;
+        top: 0;
+    }
+    .logo {
+        margin: 0;
+        padding: 0;
+    }
+
+    .cabecalhoLista {
+        margin: 0;
+        margin-top: 1rem;
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    .cabecalho {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .menuBurguer {
+        cursor: pointer;
+        display: block;
+        font-size: 3rem;
+        margin-right: 10rem;
+    }
+
+    .logo {
+        margin-left: 10rem;
+    }
+
+    .cabecalhoLista {
+        display: none;
+        position: fixed;
+        z-index: 999999;
+        top: 4rem;
+        right: 3.5rem;
+        flex-direction: column;
+        height: 25vh;
+        width: 250px;
+        background-color: var(--branco-escuro);
+        justify-content: space-around;
+        align-items: center;
+        border-radius: 0 0 10px 10px;
+    }
+
+    .linkCabecalho-Central {
+        padding: 1.3rem 50px;
+        border-top: 2px solid var(--preto);
+        border-bottom: 2px solid var(--preto);
+    }
+}
+
+@media screen and (max-width: 804px) {
+    .cabecalho {
+        padding: 0.5rem 0;
+    }
+
+    .logo {
+        font-size: 2rem;
+    }
+
+    .menuBurguer {
+        font-size: 2rem;
+    }
+
+    .cabecalhoLista {
+        top: 2rem;
+    }
+
+    .linkCabecalho {
+        font-size: 1.2rem;
+    }
+}
+
+@media screen and (max-width: 657px) {
+    .logo {
+        margin-left: 2.5rem;
+    }
+
+    .menuBurguer {
+        margin-right: 2.5rem;
+    }
+
+    .cabecalhoLista {
+        right: 0.875rem;
+    }
+}
+
+@media screen and (max-width: 420px) {
+    .logo {
+        margin-left: 0;
+        font-size: 1.5rem;
+    }
+
+    .menuBurguer {
+        margin-right: 0;
+    }
+
+    .cabecalhoLista {
+        right: 0;
+    }
 }
