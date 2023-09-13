@@ -45,7 +45,8 @@
 
 .iconesTecnologias:active {
     background-color: var(--laranja);
-    transition: 0s;
+    scale: 0.9;
+    transition: 200ms;
 }
 
 .minhaFoto-Container {

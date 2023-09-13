@@ -99,6 +99,15 @@ body {
         margin-right: 10rem;
     }
 
+    .linkCabecalho {
+        background: none;
+    }
+
+    .linkCabecalho:hover {
+        background-size: 0%;
+        transition: 0s;
+    }
+
     .logo {
         margin-left: 10rem;
     }

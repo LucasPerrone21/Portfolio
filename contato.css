@@ -58,14 +58,14 @@
 
 .contato-redes:hover {
     background: var(--azul-claro);
-    scale: 1.01;
-    transition: 200ms;
+    scale: 1.1;
+    transition: 500ms;
 }
 
 .contato-redes:active {
     background: var(--laranja);
     scale: 0.99;
-    transition: 100ms;
+    transition: 200ms;
 }
 
 .contatoDireita {

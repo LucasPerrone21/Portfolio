@@ -24,7 +24,7 @@ const textoElement = document.getElementById("cargoAnimation");
 typeWriter(textoElement);
 
 const menuSelect = document.getElementById("menuBurguer");
-const menu = document.querySelector("#cabecalhoBurguer");
+const menu = document.getElementById("cabecalhoBurguer");
 
 menuSelect.addEventListener("click", () => {
     if (menuSelect.innerHTML == "menu") {
@@ -33,5 +33,11 @@ menuSelect.addEventListener("click", () => {
     } else if (menuSelect.innerHTML == "close") {
         menuSelect.innerHTML = "menu";
         menu.style.display = "none";
+    }
+});
+
+window.addEventListener("resize", () => {
+    if (window.innerWidth >= 1200) {
+        menu.style.display = "flex";
     }
 });
