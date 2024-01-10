@@ -1,0 +1,79 @@
+.modalLinguagensContainer {
+    display: none;
+}
+
+.modalLinguagensContainer.active {
+    display: inline;
+    position: fixed;
+    z-index: 2000;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(7px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: popIn 0.05s forwards;
+}
+
+.modalLinguagens {
+    position: relative;
+    background-color: var(--branco);
+    width: 50%;
+
+    border-radius: 10px;
+}
+
+.modalTitulo {
+    color: var(--preto);
+    font-size: 3rem;
+    text-align: center;
+    padding-bottom: 1rem;
+    padding-top: 2rem;
+    font-weight: bold;
+}
+
+.modalBotao {
+    position: absolute;
+    font-size: 2rem;
+    padding: 0.2rem;
+    top: -0.5rem;
+    right: -0.5rem;
+    color: var(--branco);
+    border: 3px solid var(--branco);
+    border-radius: 10px;
+    background-color: var(--laranja);
+    cursor: pointer;
+}
+
+.modalImagem {
+    width: 11rem;
+}
+
+.modalTextoImagem {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+    padding-bottom: 2rem;
+}
+
+.modalTexto {
+    color: var(--preto);
+    font-size: 1.1rem;
+    padding: 1rem;
+    align-self: flex-start;
+    text-align: justify;
+}
+
+@keyframes popIn {
+    from {
+        transform: scale(0.7);
+    }
+
+    to {
+        transform: scale(1);
+    }
+}

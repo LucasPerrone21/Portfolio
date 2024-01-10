@@ -7,18 +7,14 @@
     <meta name="description" content="Portifolio">
     <meta name="keywords" content="HTML, CSS, JavaScript, Fullstack">
     <meta name="author" content="Lucas Perrone">
+    <link rel="shortcut icon" type="imagex/png" href="./imagens/logoReduzida.png">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;700&display=swap" rel="stylesheet">
-    <link type="text/css" rel="stylesheet" href="cssReset.css">
-    <link type="text/css" rel="stylesheet" href="cores.css">
-    <link type="text/css" rel="stylesheet" href="header.css">
-    <link type="text/css" rel="stylesheet" href="inicio.css">
-    <link type="text/css" rel="stylesheet" href="meusProjetos.css">
-    <link type="text/css" rel="stylesheet" href="contato.css">
-    <link type="text/css" rel="stylesheet" href="footer.css">
+    <link type="text/css" rel="stylesheet" href="/css/style.css">
     <title>Lucas Perrone - Fullstack Developer</title>
+    <script type="module" src="./js/script.js" defer></script>
 </head>
 
 <body>
@@ -45,11 +41,11 @@
                     <p class="minhaDescricao">E aí, curioso visitante do meu cantinho cibernético!👋 Sou um Dev FullStack que trabalha com <strong class="minhaDescricao-Negrito">HTML, CSS, JavaScript, React e Python</strong> nos projetos. Atualmente curso <strong class="minhaDescricao-Negrito">Sistemas de Informação</strong> na Universidade Federal da Bahia e estou estudando <strong class="minhaDescricao-Negrito">Desenvolvimento WEB</strong>
                     </p>
                     <div class="iconesTecnologias-container">
-                        <img class="iconesTecnologias" src="Imagens/Icones/html.png" alt="HTML5">
-                        <img class="iconesTecnologias" src="Imagens/Icones/css-3.png" alt="CSS3">
-                        <img class="iconesTecnologias" src="Imagens/Icones/js.png" alt="JavaScript">
-                        <img class="iconesTecnologias" src="Imagens/Icones/react.png" alt="ReactJS">
-                        <img class="iconesTecnologias" src="Imagens/Icones/python.png" alt="Python">
+                        <img class="iconesTecnologias" src="Imagens/Icones/html.png" alt="HTML5" data-modal="modalHTML">
+                        <img class="iconesTecnologias" src="Imagens/Icones/css-3.png" alt="CSS3" data-modal="modalCSS">
+                        <img class="iconesTecnologias" src="Imagens/Icones/js.png" alt="JavaScript" data-modal="modalJS">
+                        <img class="iconesTecnologias" src="Imagens/Icones/react.png" alt="ReactJS" data-modal="modalReactJS">
+                        <img class="iconesTecnologias" src="Imagens/Icones/python.png" alt="Python" data-modal="modalPython">
                         <a target="_blank" href="https://github.com/LucasPerrone21">
                             <img class="iconesTecnologias links-redes" src="Imagens/Icones/github.png" alt="Github">
                         </a>
@@ -130,15 +126,15 @@
                         </a>
                     </div>
                 </div>
-                <form class="contatoDireita" action="">
+                <form class="contatoDireita">
 
-                    <input class="entradaInput" type="text" placeholder="Nome" required>
+                    <input class="entradaInput" type="text" placeholder="Nome" name="nome" id="nome" required>
 
-                    <input class="entradaInput" type="text" placeholder="Empresa" required>
+                    <input class="entradaInput" type="text" placeholder="Empresa" name="empresa" id="empresa" required>
 
-                    <input class="entradaInput" type="email" placeholder="E-mail" required>
+                    <input class="entradaInput" type="email" placeholder="E-mail" name="email" id="email" required>
 
-                    <textarea maxlength="500" class="mensagem entradaInput" name="" id="mensagem" cols="30" rows="10" required placeholder="Mensagem"></textarea>
+                    <textarea maxlength="500" class="mensagem entradaInput" name="mensagem" id="mensagem" cols="30" rows="10" required placeholder="Mensagem"></textarea>
                     <button class="enviarBotao" type="submit">Enviar</button>
                 </form>
             </div>
@@ -149,7 +145,67 @@
         <p class="direitos">© 2023 Lucas Perrone. Todos os direitos reservados.</p>
     </footer>
 
-    <script src="script.js"></script>
+    <section class="modalLinguagensContainer modalPython">
+        <div class="modalLinguagens">
+            <h3 class="modalTitulo">Python</h3>
+            <span class="modalBotao">X</span>
+
+            <div class="modalTextoImagem">
+                <img class="modalImagem" src="./Imagens/Icones/python.png" alt="Logo da Linguagem Python">
+                <p class="modalTexto">Python é uma linguagem de programação de alto nível, destacada por sua sintaxe clara e expressiva, promovendo produtividade e legibilidade, Sendo amplamente utilizada em desenvolvimento web, automação, análise de dados e inteligência artificial.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="modalLinguagensContainer modalReactJS">
+        <div class="modalLinguagens">
+            <h3 class="modalTitulo">ReactJS</h3>
+            <span class="modalBotao">X</span>
+
+            <div class="modalTextoImagem">
+                <img class="modalImagem" src="./Imagens/Icones/react.png" alt="Logo da Biblioteca ReactJS">
+                <p class="modalTexto">ReactJS é uma biblioteca JavaScript declarativa, eficiente e flexível para a construção de interfaces de usuário. Com seu modelo de programação baseado em componentes, ReactJS é amplamente utilizado no desenvolvimento de interfaces de usuário interativas e responsivas.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="modalLinguagensContainer modalHTML">
+        <div class="modalLinguagens">
+            <h3 class="modalTitulo">HTML5</h3>
+            <span class="modalBotao">X</span>
+
+            <div class="modalTextoImagem">
+                <img class="modalImagem" src="./Imagens/Icones/html.png" alt="Logo da linguagem HTML5">
+                <p class="modalTexto">HTML5 é a quinta versão da linguagem de marcação usada para estruturar conteúdo na web. Introduziu novos elementos e APIs que possibilitam a criação de páginas web mais ricas e interativas.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="modalLinguagensContainer modalCSS">
+        <div class="modalLinguagens">
+            <h3 class="modalTitulo">CSS3</h3>
+            <span class="modalBotao">X</span>
+
+            <div class="modalTextoImagem">
+                <img class="modalImagem" src="./Imagens/Icones/css-3.png" alt="Logo da linguagem CSS3">
+                <p class="modalTexto">CSS3 é a terceira versão das Folhas de Estilo em Cascata. Ele adicionou recursos como transições, animações e efeitos visuais, permitindo uma estilização mais avançada e atraente para páginas web.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="modalLinguagensContainer modalJS">
+        <div class="modalLinguagens">
+            <h3 class="modalTitulo">JavaScript</h3>
+            <span class="modalBotao">X</span>
+
+            <div class="modalTextoImagem">
+                <img class="modalImagem" src="./Imagens/Icones/js.png" alt="Logo da linguagem JavaScript">
+                <p class="modalTexto">JavaScript é uma linguagem de programação de alto nível, interpretada e orientada a objetos. Amplamente utilizada para adicionar interatividade às páginas web, ela permite a manipulação dinâmica do conteúdo e a criação de experiências do usuário mais dinâmicas.</p>
+            </div>
+        </div>
+    </section>
+
+
 </body>
 
 
