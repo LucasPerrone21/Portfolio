@@ -1,0 +1,71 @@
+body {
+    font-family: "Montserrat", sans-serif;
+    background-color: var(--branco);
+}
+
+::-webkit-scrollbar {
+    width: 8px;
+    background-color: var(--preto);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--azul-meio-termo);
+    border-radius: 5px;
+}
+
+.cabecalho {
+    background-color: var(--branco);
+    width: 100%;
+    position: fixed;
+    z-index: 2000;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    align-self: center;
+    align-items: center;
+    padding: 1rem 0;
+    top: 0;
+}
+
+.menuBurguer {
+    display: none;
+}
+
+.logo {
+    font-size: 2rem;
+    align-self: center;
+    color: var(--preto);
+    margin-left: 10rem;
+    font-weight: bold;
+}
+
+.cabecalhoLista {
+    display: flex;
+    flex-direction: row;
+    margin-right: 10rem;
+}
+
+.linkCabecalho {
+    text-decoration: none;
+    color: var(--preto);
+    font-size: 1.2rem;
+    background: linear-gradient(
+        90deg,
+        var(--laranja) 13%,
+        var(--azul-meio-termo) 85%
+    );
+    background-repeat: no-repeat;
+    background-size: 0% 3px;
+    background-position: left bottom;
+    font-weight: bold;
+    padding-bottom: 0.3rem;
+}
+
+.linkCabecalho:nth-child(1) {
+    margin: 0 2rem;
+}
+
+.linkCabecalho:hover {
+    background-size: 100% 3px;
+    transition: 200ms ease;
+}

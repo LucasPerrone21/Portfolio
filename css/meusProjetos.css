@@ -1,0 +1,204 @@
+.meusProjetos {
+    padding: 0 10rem;
+    color: var(--branco);
+
+    background-image: url("../Imagens/fundoProjetos.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+.meusProjetos-Titulo {
+    font-size: 4rem;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 2.5rem;
+    padding-top: 2.5rem;
+    margin-bottom: 7.5rem;
+}
+
+.meusProjetos-Itens-Container {
+    display: flex;
+    flex-direction: column;
+}
+
+.meusProjetos-Itens {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 2.5rem;
+}
+
+.meusProjetos-Fotos {
+    width: 36rem;
+    padding-right: 10rem;
+}
+
+.spaceInvaders {
+    width: 36rem;
+    padding-right: 0;
+    border-right: none;
+    padding-left: 10rem;
+}
+
+.meusProjetos-Subtitulo {
+    font-size: 2.5rem;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 2.5rem;
+    padding-top: 2.5rem;
+    margin-bottom: 2.5rem;
+    line-height: 2.4rem;
+}
+
+.meusProjetos-Descricao {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: justify;
+    align-items: center;
+    margin-left: 3.5rem;
+    margin-right: 3.5rem;
+    width: 35rem;
+    line-height: 1.4rem;
+}
+
+.meusProjetos-Descricao-Paragrafo {
+    font-size: 1.2rem;
+}
+
+.linkRepositorio,
+.linkSitePublicado {
+    width: 3rem;
+    margin: 2.5rem;
+}
+
+.linkRodrigo {
+    text-decoration: none;
+    color: var(--azul-meio-termo);
+}
+
+@media screen and (max-width: 1490px) {
+    .meusProjetos-Fotos {
+        width: 30rem;
+        padding-right: 6rem;
+    }
+
+    .spaceInvaders {
+        width: 30rem;
+        padding-right: 0;
+        border-right: none;
+        padding-left: 6rem;
+    }
+
+    .linkRepositorio,
+    .linkSitePublicado {
+        width: 3rem;
+        margin: 1.5rem;
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    .meusProjetos {
+        padding: 0 5rem;
+    }
+    .meusProjetos-Descricao {
+        width: 75%;
+    }
+
+    .meusProjetos-Fotos {
+        width: 20rem;
+        padding-right: 2rem;
+    }
+
+    .spaceInvaders {
+        width: 20rem;
+        padding-left: 2rem;
+    }
+}
+
+@media screen and (max-width: 804px) {
+    .meusProjetos-Titulo {
+        font-size: 2.5rem;
+        margin-top: 1.5rem;
+        margin-bottom: 3rem;
+    }
+
+    .meusProjetos-Subtitulo {
+        font-size: 1.5rem;
+        margin-top: 1.5rem;
+        padding-top: 1.5rem;
+        margin-bottom: 1.5rem;
+        line-height: 1.4rem;
+    }
+
+    .meusProjetos-Descricao {
+        margin: 0 1rem;
+    }
+
+    .meusProjetos-Descricao-Paragrafo {
+        font-size: 1rem;
+    }
+
+    .meusProjetos-Fotos {
+        width: 18rem;
+        padding-right: 0;
+    }
+
+    .spaceInvaders {
+        width: 18rem;
+        padding-left: 0;
+    }
+
+    .linkRepositorio,
+    .linkSitePublicado {
+        width: 2.5rem;
+        margin: 1rem;
+    }
+}
+
+@media screen and (max-width: 657px) {
+    .meusProjetos {
+        padding: 0 2.5rem;
+    }
+
+    .meusProjetos-Itens {
+        flex-direction: column;
+    }
+
+    .meusProjetos-Itens-Central {
+        flex-direction: column-reverse;
+        border-bottom: 1px solid var(--branco);
+        border-top: 1px solid var(--branco);
+        margin-bottom: 0;
+        padding-bottom: 1rem;
+    }
+
+    .meusProjetos-Descricao {
+        margin: 0 1rem;
+    }
+
+    .meusProjetos-Descricao-Paragrafo {
+        font-size: 1rem;
+    }
+
+    .meusProjetos-Fotos {
+        width: 26rem;
+        padding-right: 0;
+    }
+
+    .spaceInvaders {
+        width: 26rem;
+        padding-left: 0;
+    }
+}
+
+@media screen and (max-width: 420px) {
+    .meusProjetos-Fotos {
+        width: 20rem;
+    }
+
+    .meusProjetos-Descricao {
+        margin: 0;
+    }
+}
