@@ -22,28 +22,42 @@
 
 .iconesTecnologias-container {
     display: flex;
-    flex-direction: row;
     justify-content: center;
     flex-wrap: wrap;
     margin-right: 6rem;
 }
 
-.iconesTecnologias {
-    width: 3rem;
+
+.iconesTecnologias-subContainer{
+    text-decoration: none;
+    color: var(--preto);
+    font-size: 1.2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     background-color: var(--branco-escuro);
+    margin: 12px;
+    padding: 4px 12px;
+    border-radius: 10px;
+    width: 10rem;
+}
+
+.iconesTecnologias {
+       
+    width: 3rem;
     border-radius: 10px;
     padding: 4px;
     margin: 4px;
     cursor: pointer;
 }
 
-.iconesTecnologias:hover {
+.iconesTecnologias-subContainer:hover {
     background-color: var(--azul-claro);
     scale: 1.1;
     transition: 500ms;
 }
 
-.iconesTecnologias:active {
+.iconesTecnologias-subContainer:active {
     background-color: var(--laranja);
     scale: 0.9;
     transition: 200ms;

@@ -1,8 +1,8 @@
 export default function initEscritaAnimacao() {
     function typeWriter(texto) {
-        const text1 = "Fullstack Developer";
+        const text1 = "Desenvolvedor Backend";
         let currentIndex = 0;
-        texto.innerHTML = "I'm ";
+        texto.innerHTML = "Sou ";
 
         function addLetter() {
             if (currentIndex < text1.length) {
@@ -11,10 +11,9 @@ export default function initEscritaAnimacao() {
                 setTimeout(addLetter, 90);
             } else {
                 setTimeout(() => {
-                    texto.innerHTML = "I'm ";
                     currentIndex = 0;
                     typeWriter(texto);
-                }, 6000);
+                }, 5000);
             }
         }
 
