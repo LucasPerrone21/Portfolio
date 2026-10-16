@@ -1,0 +1,231 @@
+@import "tailwindcss";
+
+@theme {
+  /* Core Red Bull-Inspired High Velocity Editorial Palette */
+  --color-energy-red: #DB0A40;
+  --color-energy-red-bright: #E30613;
+  --color-highlight-yellow: #FFCC00;
+  --color-highlight-gold: #FFD700;
+  --color-structure-navy: #001A72;
+  --color-structure-deep: #001248;
+  --color-structure-dark: #000F2E;
+  --color-primary: #001A72;
+  --color-text-primary: #0A1128;
+  --color-text-subtle: #4B5565;
+  --color-surface: #FFFFFF;
+  --color-surface-base: #FFFFFF;
+  --color-surface-light: #FAFCFF;
+  --color-surface-container: #F1F5FA;
+  --color-surface-container-low: #F7FAFC;
+  --color-surface-container-high: #E5ECF6;
+  --color-outline-subtle: rgba(0, 26, 114, 0.12);
+
+  /* Extended Design System Semantic Tokens */
+  --color-surface-dim: #cbdcf1;
+  --color-surface-bright: #f7f9ff;
+  --color-surface-container-lowest: #ffffff;
+  --color-surface-container-highest: #d3e4fa;
+  --color-on-surface: #0c1d2c;
+  --color-on-surface-variant: #454651;
+  --color-secondary: #ba0034;
+  --color-secondary-container: #e41846;
+  --color-tertiary: #745b00;
+  --color-tertiary-container: #d0a600;
+
+  /* Typography Families */
+  --font-display: "Barlow Condensed", sans-serif;
+  --font-headline: "Barlow Condensed", sans-serif;
+  --font-body: "Inter", sans-serif;
+  --font-mono: "JetBrains Mono", monospace;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    background-color: #FFFFFF;
+    color: #0A1128;
+  }
+
+  body {
+    margin: 0;
+    background-color: var(--color-surface);
+    font-family: var(--font-body);
+    color: var(--color-text-primary);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+}
+
+.clip-corner {
+  clip-path: polygon(0 0, calc(100% - 10px) 0, 100% 10px, 100% 100%, 0 100%);
+}
+
+.clip-badge {
+  clip-path: polygon(0 0, calc(100% - 6px) 0, 100% 6px, 100% 100%, 0 100%);
+}
+
+.blueprint-grid {
+  background-image:
+    linear-gradient(to right, rgba(0, 26, 114, 0.04) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(0, 26, 114, 0.04) 1px, transparent 1px);
+  background-size: 28px 28px;
+}
+
+.blueprint-grid-dark {
+  background-image:
+    linear-gradient(to right, rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+  background-size: 28px 28px;
+}
+
+.tech-border {
+  border: 1px solid rgba(0, 26, 114, 0.12);
+}
+
+@keyframes slideFadeIn {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 12px, 0);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+.animate-slide-fade {
+  animation: slideFadeIn 420ms cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+/* TITAN 3D Easter Egg Animations */
+.titan-scene-3d {
+  perspective: 1200px;
+  transform-style: preserve-3d;
+}
+
+.titan-medallion-3d {
+  transform-style: preserve-3d;
+  animation: titan3dLifecycle 3900ms cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+@keyframes titan3dLifecycle {
+  0% {
+    opacity: 0;
+    transform: translateZ(-700px) scale3d(0.05, 0.05, 0.05) rotateX(45deg) rotateY(0deg) rotateZ(-25deg);
+  }
+  12% {
+    opacity: 1;
+  }
+  /* Stops spinning and reaches ideal size at ~31% (1.2s of 3.9s) */
+  31% {
+    opacity: 1;
+    transform: translateZ(0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(1080deg) rotateZ(0deg);
+  }
+  /* Subtle 3D float while holding for ~2s with golden glow (31% -> 82% = ~2.0s) */
+  56% {
+    opacity: 1;
+    transform: translateZ(28px) scale3d(1.04, 1.04, 1.04) rotateX(8deg) rotateY(1092deg) rotateZ(2deg);
+  }
+  82% {
+    opacity: 1;
+    transform: translateZ(0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(1080deg) rotateZ(0deg);
+  }
+  /* 3D Exit (82% -> 100% = ~0.7s) */
+  100% {
+    opacity: 0;
+    transform: translateZ(-500px) scale3d(0.1, 0.1, 0.1) rotateX(-35deg) rotateY(1440deg) rotateZ(20deg);
+  }
+}
+
+@keyframes titanBackdropLifecycle {
+  0% {
+    opacity: 0;
+  }
+  12% {
+    opacity: 1;
+  }
+  84% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+.animate-titan-backdrop {
+  animation: titanBackdropLifecycle 3900ms ease-in-out forwards;
+}
+
+@keyframes titanGlowBurst {
+  0%, 28% {
+    opacity: 0;
+    transform: scale(0.4);
+  }
+  34% {
+    opacity: 1;
+    transform: scale(1.15);
+  }
+  58% {
+    opacity: 0.92;
+    transform: scale(1.3);
+  }
+  82% {
+    opacity: 1;
+    transform: scale(1.12);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(0.3);
+  }
+}
+
+.animate-titan-glow {
+  animation: titanGlowBurst 3900ms cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+@keyframes titanShockwave {
+  0%, 30% {
+    opacity: 0;
+    transform: translateZ(-20px) scale(0.6);
+  }
+  33% {
+    opacity: 0.95;
+    transform: translateZ(-20px) scale(0.95);
+  }
+  70% {
+    opacity: 0;
+    transform: translateZ(-20px) scale(2.1);
+  }
+  100% {
+    opacity: 0;
+    transform: translateZ(-20px) scale(2.2);
+  }
+}
+
+.animate-titan-shockwave {
+  animation: titanShockwave 3900ms cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Hero SYSTEM_TOPOLOGY.DIAG 3D Tilt & Pulsing Blue Glow */
+@keyframes topologyBluePulse {
+  0%, 100% {
+    opacity: 0.45;
+    transform: scale(0.98);
+    box-shadow:
+      0 0 25px 4px rgba(59, 130, 246, 0.22),
+      0 0 55px 12px rgba(0, 26, 114, 0.14);
+  }
+  50% {
+    opacity: 0.85;
+    transform: scale(1.03);
+    box-shadow:
+      0 0 38px 10px rgba(59, 130, 246, 0.38),
+      0 0 80px 24px rgba(37, 99, 235, 0.22);
+  }
+}
+
+.animate-topology-blue-pulse {
+  animation: topologyBluePulse 3.6s ease-in-out infinite;
+}
+
+
