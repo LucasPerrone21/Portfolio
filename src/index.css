@@ -228,4 +228,19 @@
   animation: topologyBluePulse 3.6s ease-in-out infinite;
 }
 
+/* Projects Carousel 5s Telemetry Progress Bar */
+@keyframes projectCarouselTimer {
+  0% {
+    width: 0%;
+  }
+  100% {
+    width: 100%;
+  }
+}
+
+.animate-project-timer {
+  animation: projectCarouselTimer 5000ms linear forwards;
+}
+
+
 

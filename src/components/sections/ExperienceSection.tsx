@@ -260,7 +260,7 @@ export function ExperienceSection() {
           <div className="flex flex-col md:flex-row md:items-end justify-between pb-6 border-b-2 border-structure-navy gap-4">
             <div className="flex items-center gap-4">
               <div className="w-12 h-12 bg-structure-navy text-white flex items-center justify-center font-headline text-2xl font-black clip-corner border-l-4 border-energy-red-bright">
-                02
+                01
               </div>
               <div>
                 <span className="font-mono text-xs text-energy-red-bright font-bold uppercase tracking-widest block">

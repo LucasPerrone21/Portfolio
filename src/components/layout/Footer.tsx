@@ -30,7 +30,7 @@ export function Footer() {
           >
             LINKEDIN
           </a>
-          <a href="#sobre" className="hover:text-highlight-yellow transition-colors">
+          <a href="#" className="hover:text-highlight-yellow transition-colors">
             TOPO ↑
           </a>
         </div>
