@@ -125,15 +125,17 @@ export function ContactSection() {
                   STATUS: DISPONÍVEL P/ SPRINT
                 </span>
                 <h3 className="font-headline text-2xl font-black uppercase text-white leading-tight">
-                  INICIAR DISCUSSÃO DE ARQUITETURA
+                  CHAMA NO WHATSAPP
                 </h3>
                 <p className="font-body text-xs text-white/75 leading-relaxed">
                   Retorno com foco objetivo na modelagem técnica, prazo de entrega e
                   requisitos de banco de dados.
                 </p>
                 <a
-                  href={`mailto:${CONTACT_INFO.email}`}
-                  className="w-full inline-flex items-center justify-center bg-energy-red-bright hover:bg-energy-red text-white font-headline text-base uppercase py-3.5 px-6 tracking-wider font-extrabold clip-corner transition-all shadow-[0_4px_16px_rgba(227,6,19,0.4)] border-t border-highlight-yellow"
+                  href={`https://wa.me/5571986661929?text=Ol%C3%A1%2C%20Lucas.%20Gostaria%20de%20discutir%20um%20projeto%20com%20você.`}
+                  target={"_blank"}
+                  rel={"noopener noreferrer"}
+                  className={"w-full inline-flex items-center justify-center bg-energy-red-bright hover:bg-energy-red text-white font-headline text-base uppercase py-3.5 px-6 tracking-wider font-extrabold clip-corner transition-all shadow-[0_4px_16px_rgba(227,6,19,0.4)] border-t border-highlight-yellow"}
                 >
                   ENVIAR MENSAGEM
                   <span className="material-symbols-outlined ml-2 text-highlight-yellow text-sm">

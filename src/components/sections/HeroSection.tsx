@@ -233,7 +233,7 @@ export function HeroSection() {
                       className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-500"
                     />
                     <div className="absolute top-3 left-3 bg-structure-navy text-white font-mono text-[11px] font-bold px-2 py-0.5 uppercase tracking-wider clip-badge">
-                      SYS_DEV //&nbsp;
+                      SYS_DEV // O DESENVOLVEDOR
                     </div>
                     <div className="absolute bottom-3 right-3 bg-energy-red-bright text-white font-headline text-xs font-black px-2.5 py-1 uppercase tracking-wider shadow">
                       BACKEND SPECIALIST
