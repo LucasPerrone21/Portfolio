@@ -6,9 +6,9 @@ export function Footer() {
       <div className="max-w-[1360px] mx-auto px-6 lg:px-12 flex flex-col sm:flex-row items-center justify-between gap-4 font-mono text-xs">
         <div className="flex items-center gap-2">
           <span className="w-2 h-2 bg-energy-red-bright" />
-          <span className="font-bold text-white uppercase">Lucas Perrone Ramos</span>
+          <span className="font-bold text-white uppercase">Lucas Perrone</span>
           <span className="text-white/40">·</span>
-          <span className="text-highlight-yellow uppercase">Backend Developer</span>
+          <span className="text-highlight-yellow uppercase">Fullstack Developer</span>
           <span className="text-white/40">·</span>
           <span className="text-white/70">© 2026</span>
         </div>

@@ -15,7 +15,7 @@ export function Header() {
               LUCAS PERRONE
             </span>
             <span className="font-mono text-[10px] tracking-widest text-text-subtle uppercase font-semibold">
-              BACKEND DEVELOPER // SPEC 3.0
+              FULLSTACK DEVELOPER // SPEC 3.0
             </span>
           </div>
         </a>
