@@ -1,6 +1,7 @@
 import { Fragment, useRef, useState, type MouseEvent } from 'react';
-import { HERO_CORE_RUNTIMES, SYSTEM_TOPOLOGY_NODES } from '../../data/portfolioData';
+import { HERO_CORE_RUNTIMES, PROFILE_PHOTO } from '../../data/portfolioData';
 import { ScrollReveal } from '../ui/ScrollReveal';
+import { SoftAurora } from '../ui/SoftAurora';
 
 interface TiltState {
   rotateX: number;
@@ -10,7 +11,7 @@ interface TiltState {
   isHovered: boolean;
 }
 
-const MAX_TILT_DEG = 14;
+const MAX_TILT_DEG = 5;
 
 export function HeroSection() {
   const cardRef = useRef<HTMLDivElement>(null);
@@ -59,8 +60,24 @@ export function HeroSection() {
 
   return (
     <section className="relative w-full bg-surface py-20 lg:py-28 border-b border-outline-subtle blueprint-grid overflow-hidden">
+      {/* SoftAurora WebGL Background */}
+      <div className="absolute inset-0 pointer-events-none z-0">
+        <SoftAurora
+          speed={0.6}
+          scale={1.5}
+          brightness={1}
+          color1="#E5ECF6"
+          color2="#001A72"
+          bandHeight={0.5}
+          bandSpread={1}
+          enableMouseInteraction
+          mouseInfluence={0.25}
+          lightMode
+        />
+      </div>
+
       {/* Linhas de precisão e acento cirúrgico */}
-      <div className="absolute top-0 right-0 w-1/3 h-full pointer-events-none opacity-40">
+      <div className="absolute top-0 right-0 w-1/3 h-full pointer-events-none opacity-40 z-0">
         <div className="absolute right-0 top-12 w-96 h-96 bg-surface-container rounded-full blur-3xl" />
       </div>
 
@@ -69,7 +86,7 @@ export function HeroSection() {
         <ScrollReveal direction="down" duration={550}>
           <div className="flex flex-wrap items-center gap-3 mb-6">
             <span className="px-2.5 py-0.5 bg-structure-navy text-white font-mono text-xs uppercase tracking-widest font-bold clip-badge">
-              BACKEND ARCHITECTURE // SPEC_03
+              SOFTWARE ARCHITECTURE // SPEC_03
             </span>
             <span className="h-px w-10 bg-energy-red-bright" />
             <span className="font-mono text-xs text-text-subtle font-medium uppercase tracking-wider">
@@ -95,11 +112,19 @@ export function HeroSection() {
 
             <ScrollReveal direction="up" delay={220}>
               <p className="font-body text-xl sm:text-2xl text-text-primary font-normal leading-relaxed max-w-xl">
-                Construindo{' '}
+                Criando{' '}
+                <span className="font-semibold text-structure-navy underline decoration-highlight-yellow decoration-2 underline-offset-4">
+                  interfaces fluidas
+                </span>
+                ,{' '}
                 <span className="font-semibold text-structure-navy underline decoration-highlight-yellow decoration-2 underline-offset-4">
                   APIs resilientes
                 </span>
-                , automações de alta precisão e sistemas escaláveis de missão crítica.
+                {' '}e{' '}
+                <span className="font-semibold text-structure-navy underline decoration-highlight-yellow decoration-2 underline-offset-4">
+                  automações eficientes
+                </span>
+                {' '}que sustentam produtos digitais escaláveis.
               </p>
             </ScrollReveal>
 
@@ -154,7 +179,7 @@ export function HeroSection() {
             </ScrollReveal>
           </div>
 
-          {/* Lado Direito: DIAGRAMA TÉCNICO DE NÓS DE BACKEND (PRECISION ARCHITECTURE) */}
+          {/* Lado Direito: Card com Foto Editorial + Crachá Técnico */}
           <div className="lg:col-span-5">
             <ScrollReveal direction="right" delay={200} duration={750}>
               <div
@@ -172,12 +197,12 @@ export function HeroSection() {
                   }}
                 />
 
-                {/* Card Interativo 3D */}
+                {/* Card da Foto Interativo 3D */}
                 <div
                   ref={cardRef}
                   onMouseMove={handleMouseMove}
                   onMouseLeave={handleMouseLeave}
-                  className="bg-white p-6 rounded-none tech-border relative overflow-hidden will-change-transform"
+                  className="relative bg-white p-3 border-2 border-structure-navy overflow-hidden will-change-transform"
                   style={{
                     transform: `rotateX(${tilt.rotateX.toFixed(2)}deg) rotateY(${tilt.rotateY.toFixed(2)}deg) scale3d(${
                       tilt.isHovered ? '1.01, 1.01, 1.01' : '1, 1, 1'
@@ -194,95 +219,40 @@ export function HeroSection() {
                   {/* Reflexo azul suave acompanhando o cursor dentro do card */}
                   <div
                     aria-hidden="true"
-                    className="pointer-events-none absolute inset-0 transition-opacity duration-300"
+                    className="pointer-events-none absolute inset-0 z-20 transition-opacity duration-300"
                     style={{
                       opacity: tilt.isHovered ? 1 : 0,
-                      background: `radial-gradient(280px circle at ${tilt.glowX}% ${tilt.glowY}%, rgba(59, 130, 246, 0.12), transparent 75%)`,
+                      background: `radial-gradient(280px circle at ${tilt.glowX}% ${tilt.glowY}%, rgba(59, 130, 246, 0.14), transparent 75%)`,
                     }}
                   />
 
-                  {/* Top Bar da Janela de Telemetria */}
-                  <div className="relative z-10 flex items-center justify-between pb-4 border-b border-outline-subtle mb-5">
-                    <div className="flex items-center gap-2">
-                      <span className="w-2.5 h-2.5 rounded-full bg-energy-red-bright" />
-                      <span className="w-2.5 h-2.5 rounded-full bg-highlight-yellow" />
-                      <span className="w-2.5 h-2.5 rounded-full bg-structure-navy" />
-                      <span className="font-mono text-xs font-bold text-structure-navy ml-2">
-                        SYSTEM_TOPOLOGY.DIAG
+                  <div className="relative z-10 aspect-square overflow-hidden bg-surface-container">
+                    <img
+                      src={PROFILE_PHOTO}
+                      alt="Lucas Perrone Ramos - Fullstack Developer"
+                      className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-500"
+                    />
+                    <div className="absolute top-3 left-3 bg-structure-navy text-white font-mono text-[11px] font-bold px-2 py-0.5 uppercase tracking-wider clip-badge">
+                      SYS_DEV //&nbsp;
+                    </div>
+                    <div className="absolute bottom-3 right-3 bg-energy-red-bright text-white font-headline text-xs font-black px-2.5 py-1 uppercase tracking-wider shadow">
+                      BACKEND SPECIALIST
+                    </div>
+                  </div>
+
+                  {/* Metadados de Formação */}
+                  <div className="relative z-10 mt-4 p-3 bg-surface-light border border-outline-subtle flex items-center justify-between">
+                    <div>
+                      <span className="font-mono text-[10px] text-text-subtle uppercase block font-semibold">
+                        GRADUAÇÃO SUPERIOR
+                      </span>
+                      <span className="font-headline text-base font-bold text-structure-navy uppercase">
+                        Sistemas de Informação
                       </span>
                     </div>
-                    <span className="font-mono text-[11px] text-energy-red-bright font-black uppercase">
-                      LATÊNCIA p99: 14ms
+                    <span className="font-mono text-xs font-bold text-energy-red-bright bg-energy-red-bright/10 px-2 py-1">
+                      UFBA
                     </span>
-                  </div>
-
-                  {/* Blueprint Interativo dos Nós */}
-                  <div className="relative z-10 space-y-3 font-mono text-xs">
-                    {SYSTEM_TOPOLOGY_NODES.map((node, index) => (
-                      <Fragment key={node.id}>
-                        <ScrollReveal direction="up" delay={300 + index * 110}>
-                          <div
-                            className={
-                              node.variant === 'red'
-                                ? 'p-3.5 bg-surface-light border-l-4 border-energy-red-bright border-y border-r border-outline-subtle flex items-center justify-between'
-                                : 'p-3.5 bg-surface-light border border-outline-subtle flex items-center justify-between'
-                            }
-                          >
-                            <div className="flex items-center gap-3">
-                              <span
-                                className={
-                                  node.variant === 'red'
-                                    ? 'w-7 h-7 bg-energy-red-bright text-white flex items-center justify-center font-bold text-[11px] clip-badge'
-                                    : node.variant === 'navy-yellow'
-                                      ? 'w-7 h-7 bg-structure-navy text-highlight-yellow flex items-center justify-center font-bold text-[11px] clip-badge'
-                                      : 'w-7 h-7 bg-structure-navy text-white flex items-center justify-center font-bold text-[11px] clip-badge'
-                                }
-                              >
-                                {node.id}
-                              </span>
-                              <div>
-                                <span className="font-bold text-structure-navy block">
-                                  {node.title}
-                                </span>
-                                <span className="text-[11px] text-text-subtle font-mono">
-                                  {node.subtitle}
-                                </span>
-                              </div>
-                            </div>
-                            <span
-                              className={
-                                node.variant === 'red'
-                                  ? 'px-2 py-0.5 bg-energy-red-bright/10 text-energy-red-bright font-mono text-[10px] font-bold'
-                                  : node.variant === 'navy-yellow'
-                                    ? 'px-2 py-0.5 bg-highlight-yellow/20 text-structure-navy font-mono text-[10px] font-bold'
-                                    : 'px-2 py-0.5 bg-surface-container font-mono text-[10px] text-structure-navy font-bold'
-                              }
-                            >
-                              {node.badge}
-                            </span>
-                          </div>
-                        </ScrollReveal>
-
-                        {index < SYSTEM_TOPOLOGY_NODES.length - 1 && (
-                          <div className="flex justify-center -my-1">
-                            <div
-                              className={`w-px h-4 ${
-                                index === 0 ? 'bg-energy-red-bright' : 'bg-highlight-yellow'
-                              }`}
-                            />
-                          </div>
-                        )}
-                      </Fragment>
-                    ))}
-                  </div>
-
-                  {/* Footer de Métricas do Diagrama */}
-                  <div className="relative z-10 mt-5 pt-4 border-t border-outline-subtle flex items-center justify-between font-mono text-xs">
-                    <div className="flex items-center gap-1.5">
-                      <span className="w-2 h-2 rounded-full bg-energy-red-bright animate-pulse" />
-                      <span className="text-text-subtle">ISOLAMENTO: DOCKER CT</span>
-                    </div>
-                    <span className="text-structure-navy font-bold">THROUGHPUT: 1.2k req/s</span>
                   </div>
                 </div>
               </div>

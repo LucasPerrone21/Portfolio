@@ -280,6 +280,15 @@ export function ProjectsSection() {
     return () => window.removeEventListener('keydown', handleKeyDown);
   }, [nextSlide, prevSlide]);
 
+  // Auto-advance every 5 seconds
+  useEffect(() => {
+    const timer = window.setTimeout(() => {
+      nextSlide();
+    }, 5000);
+
+    return () => window.clearTimeout(timer);
+  }, [currentIndex, nextSlide]);
+
   const formattedCurrent =
     currentIndex + 1 < 10 ? `0${currentIndex + 1}` : `${currentIndex + 1}`;
   const formattedTotal = totalSlides < 10 ? `0${totalSlides}` : `${totalSlides}`;
@@ -296,7 +305,7 @@ export function ProjectsSection() {
           <div className="flex flex-col lg:flex-row lg:items-end justify-between pb-6 border-b-2 border-structure-navy gap-6">
             <div className="flex items-center gap-4">
               <div className="w-12 h-12 bg-structure-navy text-white flex items-center justify-center font-headline text-2xl font-black clip-corner">
-                03
+                02
               </div>
               <div>
                 <div className="flex items-center gap-2">
@@ -311,43 +320,56 @@ export function ProjectsSection() {
               </div>
             </div>
 
-            {/* Telemetria do Carrossel e Botões de Navegação */}
-            <div className="flex flex-wrap items-center gap-4">
-              {/* Indicador Numérico de Posição / HUD */}
-              <div className="flex items-center gap-3 bg-surface-container px-4 py-2 border border-outline-subtle">
-                <span className="font-mono text-[10px] text-text-subtle uppercase tracking-widest font-bold">
-                  PROJECT TELEMETRY
-                </span>
-                <span className="h-3 w-px bg-outline-subtle" />
-                <div className="font-mono text-sm font-black text-structure-navy flex items-center gap-1">
-                  <span className="text-energy-red-bright text-base">{formattedCurrent}</span>
-                  <span className="text-text-subtle font-normal">/</span>
-                  <span>{formattedTotal}</span>
+            {/* Telemetria do Carrossel + Barra de Tempo (5s) + Botões de Navegação */}
+            <div className="inline-flex flex-col self-start lg:self-auto">
+              <div className="flex flex-wrap items-center gap-4">
+                {/* Indicador Numérico de Posição / HUD */}
+                <div className="flex items-center gap-3 bg-surface-container px-4 py-2 border border-outline-subtle h-11">
+                  <span className="font-mono text-[10px] text-text-subtle uppercase tracking-widest font-bold">
+                    PROJECT TELEMETRY
+                  </span>
+                  <span className="h-3 w-px bg-outline-subtle" />
+                  <div className="font-mono text-sm font-black text-structure-navy flex items-center gap-1">
+                    <span className="text-energy-red-bright text-base">{formattedCurrent}</span>
+                    <span className="text-text-subtle font-normal">/</span>
+                    <span>{formattedTotal}</span>
+                  </div>
+                </div>
+
+                {/* Controles Prev / Next Red Bull Telemetry Style */}
+                <div className="flex items-center gap-2">
+                  <button
+                    type="button"
+                    aria-label="Projeto Anterior"
+                    onClick={prevSlide}
+                    className="w-11 h-11 bg-white hover:bg-structure-navy text-structure-navy hover:text-white border-2 border-structure-navy flex items-center justify-center transition-all clip-corner group active:scale-95 shadow-sm cursor-pointer"
+                  >
+                    <span className="material-symbols-outlined text-xl transition-transform group-hover:-translate-x-0.5">
+                      arrow_back
+                    </span>
+                  </button>
+                  <button
+                    type="button"
+                    aria-label="Próximo Projeto"
+                    onClick={nextSlide}
+                    className="w-11 h-11 bg-energy-red-bright hover:bg-energy-red text-white flex items-center justify-center transition-all clip-corner group active:scale-95 shadow-[0_2px_10px_rgba(227,6,19,0.3)] cursor-pointer"
+                  >
+                    <span className="material-symbols-outlined text-xl transition-transform group-hover:translate-x-0.5">
+                      arrow_forward
+                    </span>
+                  </button>
                 </div>
               </div>
 
-              {/* Controles Prev / Next Red Bull Telemetry Style */}
-              <div className="flex items-center gap-2">
-                <button
-                  type="button"
-                  aria-label="Projeto Anterior"
-                  onClick={prevSlide}
-                  className="w-11 h-11 bg-white hover:bg-structure-navy text-structure-navy hover:text-white border-2 border-structure-navy flex items-center justify-center transition-all clip-corner group active:scale-95 shadow-sm cursor-pointer"
-                >
-                  <span className="material-symbols-outlined text-xl transition-transform group-hover:-translate-x-0.5">
-                    arrow_back
-                  </span>
-                </button>
-                <button
-                  type="button"
-                  aria-label="Próximo Projeto"
-                  onClick={nextSlide}
-                  className="w-11 h-11 bg-energy-red-bright hover:bg-energy-red text-white flex items-center justify-center transition-all clip-corner group active:scale-95 shadow-[0_2px_10px_rgba(227,6,19,0.3)] cursor-pointer"
-                >
-                  <span className="material-symbols-outlined text-xl transition-transform group-hover:translate-x-0.5">
-                    arrow_forward
-                  </span>
-                </button>
+              {/* Barra indicadora de tempo (5s): inicia em PROJECT TELEMETRY e finaliza na seta de próximo item */}
+              <div
+                aria-hidden="true"
+                className="w-full h-1 bg-structure-navy/15 mt-2 overflow-hidden relative"
+              >
+                <div
+                  key={currentIndex}
+                  className="h-full bg-gradient-to-r from-structure-navy via-energy-red-bright to-highlight-yellow animate-project-timer"
+                />
               </div>
             </div>
           </div>

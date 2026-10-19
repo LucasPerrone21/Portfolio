@@ -1,4 +1,4 @@
-import profileImg from '../assets/images/profile.jpg';
+import profileImg from '../assets/images/profile.jpeg';
 import case01Img from '../assets/images/case-01-financial.jpg';
 import case02Svg from '../assets/images/case-02-sisu.svg';
 import case03Img from '../assets/images/case-03-iot.jpg';
@@ -15,7 +15,6 @@ import type {
 } from '../types/portfolio';
 
 export const NAV_ITEMS: NavItem[] = [
-  { label: 'Sobre', href: '#sobre' },
   { label: 'Experiência', href: '#experiencia' },
   { label: 'Projetos', href: '#projetos' },
   { label: 'Tecnologias', href: '#tecnologias' },
@@ -23,12 +22,13 @@ export const NAV_ITEMS: NavItem[] = [
 ];
 
 export const HERO_CORE_RUNTIMES: CoreRuntimeTag[] = [
+  { label: 'React', variant: 'navy-yellow' },
+  { label: 'NestJS', variant: 'navy-yellow' },
+  { label: 'TypeScript', variant: 'navy' },
   { label: 'Python', variant: 'outline' },
-  { label: 'Node.js', variant: 'outline' },
-  { label: 'NestJS', variant: 'navy' },
   { label: 'PostgreSQL', variant: 'outline' },
   { label: 'Redis', variant: 'outline' },
-  { label: 'Docker', variant: 'navy-yellow' },
+  { label: 'Docker', variant: 'outline' },
 ];
 
 export const SYSTEM_TOPOLOGY_NODES: TopologyNode[] = [
@@ -267,11 +267,6 @@ export const PROJECT_CASE_STUDIES: ProjectCaseStudy[] = [
       { label: 'PostgreSQL', variant: 'surface' },
       { label: 'Docker Swarm', variant: 'surface' },
     ],
-    metrics: [
-      { value: '+50k', label: 'REGISTROS / HORA', highlight: true },
-      { value: '100%', label: 'AUTONOMIA RUNTIME' },
-      { value: '0.02%', label: 'TAXA DE ERRO' },
-    ],
     primaryAction: {
       label: 'VER CÓDIGO FONTE',
       href: 'https://github.com/lucasperrone',
@@ -312,11 +307,6 @@ export const PROJECT_CASE_STUDIES: ProjectCaseStudy[] = [
       { label: 'Docker', variant: 'surface' },
       { label: 'Edge Buffering', variant: 'yellow-soft' },
     ],
-    metrics: [
-      { value: '10ms', label: 'SIGNAL LATENCY', highlight: true },
-      { value: '0 LOSS', label: 'BUFFER RESILIENCE' },
-      { value: '24/7', label: 'FAILOVER DUAL-NET' },
-    ],
     primaryAction: {
       label: 'VER PROJETO AO VIVO',
       href: 'https://github.com/lucasperrone',
@@ -356,11 +346,6 @@ export const PROJECT_CASE_STUDIES: ProjectCaseStudy[] = [
       { label: 'Linux Kernel Tuning', variant: 'surface' },
       { label: 'Docker / K8s', variant: 'surface' },
       { label: 'Sub-5ms Gossip', variant: 'red-soft' },
-    ],
-    metrics: [
-      { value: '4.8ms', label: 'AVERAGE LATENCY', highlight: true },
-      { value: '789', label: 'ACTIVE NODES' },
-      { value: '99.999%', label: 'SYNC CONSISTENCY' },
     ],
     primaryAction: {
       label: 'VER ARQUITETURA',
@@ -435,13 +420,14 @@ export const TECH_DOMAIN_CATEGORIES: TechDomainCategory[] = [
       { name: 'Web Scraping', badge: 'EXTRACTION', badgeVariant: 'navy' },
     ],
   },
+  
 ];
 
 export const CONTACT_INFO = {
-  email: 'lucas@perrone.dev',
-  githubUrl: 'https://github.com/lucasperrone',
-  githubDisplay: 'github.com/lucasperrone',
-  linkedinUrl: 'https://linkedin.com/in/lucasperrone',
-  linkedinDisplay: 'linkedin.com/in/lucasperrone',
+  email: 'lucaspramos21@gmail.com',
+  githubUrl: 'https://github.com/LucasPerrone21',
+  githubDisplay: 'github.com/LucasPerrone21',
+  linkedinUrl: 'https://linkedin.com/in/LucasPerrone21',
+  linkedinDisplay: 'linkedin.com/in/LucasPerrone21',
 };
 
